@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>反诈保护平台</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- 左侧导航栏 -->
+    {% include "sidebar.html" %}
+
+    <!-- 页面主体内容 -->
+    <main>
+        <div class="banner">
+            <h1>反诈保护平台</h1>
+            <p>学习如何识别骗局，保护自己和家人。</p>
+        </div>
+
+        <!-- 视频区域 -->
+        <section>
+            <h2>反诈教育视频</h2>
+            <div class="video-container">
+                <video controls>
+                    <source src="{{ url_for('static', filename='videos/8f850e84827a5cb986cf395338274e01.mp4') }}" type="video/mp4">
+                    您的浏览器不支持视频播放。
+                </video>
+            </div>
+        </section>
+
+        <!-- 防骗知识速览 -->
+        <section>
+            <h2>防骗知识速览</h2>
+            <div class="card">
+                <h3>谨防冒充熟人的诈骗</h3>
+                <p>骗子可能会冒充你的亲友，通过电话或社交平台向你借钱。请务必核实身份。</p>
+            </div>
+            <div class="card">
+                <h3>警惕虚假投资平台</h3>
+                <p>不要轻信高回报投资项目，尤其是无法提供正规资质的平台。</p>
+            </div>
+            <div class="card">
+                <h3>保护个人信息</h3>
+                <p>不要随意向陌生人透露身份证号码、银行卡信息或短信验证码。</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <p>© 2024 反诈保护平台 | 与您携手抵制诈骗</p>
+    </footer>
+</body>
+</html>

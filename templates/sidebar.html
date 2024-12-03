@@ -1,0 +1,16 @@
+<aside class="sidebar">
+    <nav>
+        <ul class="menu">
+            <li><a href="/" class="{% if request.path == '/' %}active{% endif %}">首页</a></li>
+            <li class="has-submenu">
+                <a href="/tips" class="{% if request.path.startswith('/tips') %}active{% endif %}">防骗技巧</a>
+                <ul class="submenu">
+                    <li><a href="/tips/basic" class="{% if request.path == '/tips/basic' %}active{% endif %}">基本防骗知识</a></li>
+                    <li><a href="/tips/cases" class="{% if request.path == '/tips/cases' %}active{% endif %}">经典案例分析</a></li>
+                    <li><a href="/tips/tools" class="{% if request.path == '/tips/tools' %}active{% endif %}">防骗工具推荐</a></li>
+                </ul>
+            </li>
+            <li><a href="/about" class="{% if request.path == '/about' %}active{% endif %}">关于我们</a></li>
+        </ul>
+    </nav>
+</aside>

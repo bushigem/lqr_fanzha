@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>关于我们 - 反诈保护平台</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- 左侧悬浮工具栏 -->
+    <aside class="sidebar">
+        <nav>
+            <ul>
+                <li><a href="/">首页</a></li>
+                <li><a href="/tips">防骗技巧</a></li>
+                <li><a href="/about" class="active">关于我们</a></li>
+            </ul>
+        </nav>
+    </aside>
+ {% include "sidebar.html" %}
+    <!-- 页面主体内容 -->
+    <main>
+        <div class="banner">
+            <h1>关于我们</h1>
+        </div>
+
+        <section>
+            <div class="card">
+                <h3>我们的使命</h3>
+                <p>
+                    反诈保护平台致力于为广大用户提供最新的诈骗防范知识，帮助大家提高警惕，
+                    远离骗局。我们通过案例分享、专家建议以及用户反馈，共同打造一个安全的网络环境。
+                </p>
+            </div>
+            <div class="card">
+                <h3>我们的愿景</h3>
+                <p>
+                    携手社会各界力量，建立更加完善的反诈骗教育体系，让每个人都能免受诈骗侵害。
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <p>© 2024 反诈保护平台 | 与您携手抵制诈骗</p>
+    </footer>
+</body>
+</html>
