@@ -17,18 +17,20 @@ def about():
 def tips():
     return render_template("tips.html")
 
-@app.route("/tips/basic")
-def tips_basic():
-    return render_template("basic.html")  # 创建对应的 basic.html 模板
+# 基本防骗知识页面
+@app.route("/basic")
+def basic():
+    return render_template("basic.html")  # 确保 basic.html 存在
 
-@app.route("/tips/cases")
-def tips_cases():
-    return render_template("cases.html")  # 创建对应的 cases.html 模板
+# 经典案例分析页面
+@app.route("/cases")
+def cases():
+    return render_template("cases.html")  # 确保 cases.html 存在
 
-@app.route("/tips/tools")
-def tips_tools():
-    return render_template("tools.html")  # 创建对应的 tools.html 模板
-
+# 防骗工具推荐页面
+@app.route("/tools")
+def tools():
+    return render_template("tools.html")  # 确保 tools.html 存在
 
 # 启动应用程序
 if __name__ == "__main__":

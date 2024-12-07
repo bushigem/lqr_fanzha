@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>防骗工具推荐</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- 左侧导航栏 -->
+    {% include "sidebar.html" %}
+
+    <!-- 页面主体内容 -->
+    <main>
+        <!-- 横幅 -->
+        <div class="banner">
+            <h1>防骗工具推荐</h1>
+            <p>选择合适的工具，增强防骗能力，保护自己的财产安全。</p>
+        </div>
+
+         <!-- 防骗教育视频 -->
+        <section>
+            <h2>反诈教育视频</h2>
+            <div class="video-container">
+                <video controls>
+                    <source src="{{ url_for('static', filename='videos/国家反诈中心动画反诈大片来了！.mp4') }}" type="video/mp4">
+                    您的浏览器不支持视频播放。
+                </video>
+            </div>
+        </section>
+        <!-- 防骗工具推荐列表 -->
+        <section>
+            <h2>推荐的防骗工具</h2>
+            <div class="card">
+                <h3>1. 反诈中心APP</h3>
+                <p><strong>功能：</strong>由公安部推出，提供诈骗预警、举报、诈骗案件进展查询等功能。</p>
+                <p><strong>下载链接：</strong><a href="https://www.12321.cn/" target="_blank">点击这里下载</a></p>
+            </div>
+            <div class="card">
+                <h3>2. 腾讯安全反诈助手</h3>
+                <p><strong>功能：</strong>通过大数据和人工智能技术，帮助用户识别诈骗电话、短信、网络诈骗。</p>
+                <p><strong>下载链接：</strong><a href="https://aq.qq.com/cn2/index" target="_blank">点击这里下载</a></p>
+            </div>
+            <div class="card">
+                <h3>3. 支付宝反诈保护功能</h3>
+                <p><strong>功能：</strong>支付宝内置的反诈功能，防止金融诈骗，确保交易安全。</p>
+                <p><strong>启用方式：</strong>在支付宝App内启用反诈保护功能，帮助识别和防范诈骗。</p>
+            </div>
+            <div class="card">
+                <h3>4. 微信支付反诈保障</h3>
+                <p><strong>功能：</strong>增强支付安全监控，防止资金被诈骗分子盗取。</p>
+                <p><strong>启用方式：</strong>在微信支付设置中开启反诈保护，确保支付安全。</p>
+            </div>
+            <div class="card">
+                <h3>5. 360安全卫士</h3>
+                <p><strong>功能：</strong>为用户提供钓鱼网站拦截、骚扰电话拦截、病毒防护等多种防护功能。</p>
+                <p><strong>下载链接：</strong><a href="https://www.360totalsecurity.com/zh-cn/" target="_blank">点击这里下载</a></p>
+            </div>
+            <div class="card">
+                <h3>6. 电信/移动反诈宝</h3>
+                <p><strong>功能：</strong>专门针对诈骗电话和短信进行拦截，保护用户隐私。</p>
+                <p><strong>下载链接：</strong><a href="https://www.10000.com/" target="_blank">点击这里下载</a></p>
+            </div>
+        </section>
+
+
+
+        <!-- 结语 -->
+        <section>
+            <h2>结语</h2>
+            <p>使用这些防骗工具，结合日常的防骗知识，将有效提升您的安全意识，减少诈骗风险。请保持警惕，保护您的个人财产安全。</p>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <p>© 2024 反诈保护平台 | 与您共同抵制诈骗</p>
+    </footer>
+</body>
+</html>

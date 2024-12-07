@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>经典案例分析</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- 左侧导航栏 -->
+
+ {% include "sidebar.html" %}
+<!-- 视频区域 -->
+        <section>
+            <h2>经典案例</h2>
+            <div class="video-container">
+                <video controls>
+                    <source src="{{ url_for('static', filename='videos/【大学新生防骗指南】开学骗术套路大总结.mp4') }}" type="video/mp4">
+                    您的浏览器不支持视频播放。
+                </video>
+            </div>
+        </section>

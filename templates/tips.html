@@ -6,23 +6,26 @@
 </head>
 <body>
     <!-- 左侧悬浮工具栏 -->
-    <aside class="sidebar">
-        <nav>
-            <ul>
-                <li><a href="/">首页</a></li>
-                <li><a href="/tips" class="active">防骗技巧</a></li>
-                <li><a href="/about">关于我们</a></li>
-            </ul>
-        </nav>
-    </aside>
+
+ {% include "sidebar.html" %}
 
     <!-- 页面主体内容 -->
     <main>
         <div class="banner">
+
+
             <h1>防骗技巧</h1>
             <p>掌握这些技巧，保护自己免受诈骗侵害</p>
         </div>
-
+  <section>
+            <h2>反诈教育视频</h2>
+            <div class="video-container">
+                <video controls>
+                    <source src="{{ url_for('static', filename='videos/“高阶防骗指南”，初入社会，一定擦亮双眼！！.mp4') }}" type="video/mp4">
+                    您的浏览器不支持视频播放。
+                </video>
+            </div>
+        </section>
         <section>
             <h2>实用防骗建议</h2>
             <div class="card">

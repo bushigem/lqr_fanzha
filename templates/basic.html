@@ -3,95 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>反诈保护平台 - 图片轮播</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-        }
-    </style>
+    <title>基本防骗知识</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
-<body class="bg-sky-900 text-white min-h-screen">
-    <div class="container mx-auto px-4 py-8">
-        <header class="mb-8">
-            <h1 class="text-3xl font-bold">反诈保护平台</h1>
-            <p class="text-sky-200">学习如何识别骗局，保护自己和家人。</p>
-        </header>
+<body>
+    <!-- 左侧导航栏 -->
 
-        <main>
-            <div class="bg-sky-800 rounded-lg p-6 mb-8">
-                <h2 class="text-2xl font-semibold mb-4">防诈教育图片</h2>
-                <div id="carousel-container"></div>
+ {% include "sidebar.html" %}
+    <!-- 页面主体内容 -->
+    <main>
+        <!-- 横幅 -->
+        <div class="banner">
+            <h1>基本防骗知识</h1>
+            <p>掌握这些知识，保护自己免受诈骗侵害</p>
+        </div>
+<section>
+            <h2>反诈教育视频</h2>
+            <div class="video-container">
+                <video controls>
+                    <source src="{{ url_for('static', filename='videos/成分复杂，但是反诈.mp4') }}" type="video/mp4">
+                    您的浏览器不支持视频播放。
+                </video>
             </div>
-        </main>
-    </div>
+        </section>
 
-    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <!-- 常见诈骗手段 -->
+        <section>
+            <h2>常见诈骗手段</h2>
+            <ul class="list">
+                <li><strong>冒充熟人诈骗：</strong>以“猜猜我是谁”或冒充亲戚朋友为由要求汇款。</li>
+                <li><strong>假冒客服诈骗：</strong>以账户异常为借口索要个人信息或要求转账。</li>
+                <li><strong>投资理财诈骗：</strong>承诺高额回报，引诱用户投入虚假平台。</li>
+                <li><strong>中奖诈骗：</strong>声称中奖需支付手续费以骗取钱财。</li>
+                <li><strong>冒充公检法诈骗：</strong>伪装成公安、检察院或法院，恐吓用户汇款。</li>
+            </ul>
+        </section>
 
-    <script type="text/babel">
-        const Carousel = ({ images }) => {
-            const [currentIndex, setCurrentIndex] = React.useState(0);
+        <!-- 实用防骗建议 -->
+        <section>
+            <h2>实用防骗建议</h2>
+            <div class="card">
+                <h3>1. 核实身份信息</h3>
+                <p>遇到陌生电话或信息时，务必通过可靠方式验证对方身份，尤其涉及金钱事务。</p>
+            </div>
+            <div class="card">
+                <h3>2. 谨慎处理链接</h3>
+                <p>不要点击陌生人发送的链接或附件，这些可能包含病毒或钓鱼网站。</p>
+            </div>
+            <div class="card">
+                <h3>3. 小心高回报投资</h3>
+                <p>高回报伴随高风险，通常是诈骗分子吸引目标的手段，请保持警惕。</p>
+            </div>
+            <div class="card">
+                <h3>4. 避免轻信来路不明的信息</h3>
+                <p>不轻信陌生短信、电话或网络信息，尤其涉及紧急汇款的内容。</p>
+            </div>
+        </section>
+    </main>
 
-            React.useEffect(() => {
-                const timer = setInterval(() => {
-                    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-                }, 5000);
-                return () => clearInterval(timer);
-            }, [images.length]);
-
-            const goToSlide = (index) => {
-                setCurrentIndex(index);
-            };
-
-            return (
-                <div className="relative w-full max-w-4xl mx-auto bg-sky-100 rounded-lg overflow-hidden shadow-lg">
-                    <div className="relative h-64 md:h-96">
-                        {images.map((src, index) => (
-                            <div
-                                key={src}
-                                className={`absolute top-0 left-0 w-full h-full transition-opacity duration-500 ${
-                                    index === currentIndex ? 'opacity-100' : 'opacity-0'
-                                }`}
-                            >
-                                <img
-                                    src={src}
-                                    alt={`Slide ${index + 1}`}
-                                    className="w-full h-full object-cover"
-                                />
-                            </div>
-                        ))}
-                    </div>
-                    <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
-                        {images.map((_, index) => (
-                            <button
-                                key={index}
-                                onClick={() => goToSlide(index)}
-                                className={`w-3 h-3 rounded-full ${
-                                    index === currentIndex ? 'bg-white' : 'bg-white/50'
-                                }`}
-                                aria-label={`Go to slide ${index + 1}`}
-                            />
-                        ))}
-                    </div>
-                </div>
-            );
-        };
-
-        const images = [
-            "{{ url_for('static', filename='images/fanzha1.jpg') }}",
-            "{{ url_for('static', filename='images/fanzha2.jpg') }}",
-            "{{ url_for('static', filename='images/fanzha3.jpg') }}",
-            "{{ url_for('static', filename='images/fanzha4.jpg') }}",
-            "{{ url_for('static', filename='images/fanzha5.jpg') }}"
-        ];
-
-        ReactDOM.render(
-            <Carousel images={images} />,
-            document.getElementById('carousel-container')
-        );
-    </script>
+    <!-- 页脚 -->
+    <footer>
+        <p>© 2024 反诈保护平台 | 与您共同抵制诈骗</p>
+    </footer>
 </body>
 </html>
-
